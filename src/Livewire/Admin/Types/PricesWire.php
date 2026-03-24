@@ -38,7 +38,6 @@ class PricesWire extends Component
             "image" => ["nullable", "image"],
             "price" => ["nullable", "numeric", "min:0"],
             "oldPrice" => ["nullable", "numeric", "min:0"],
-            "startDate" => ["nullable", "date"],
             "priceSign" => ["nullable", "string", "max:50"],
         ];
     }
@@ -50,7 +49,6 @@ class PricesWire extends Component
             "image" => "Изображение",
             "price" => "Цена",
             "oldPrice" => "Цена без скидки",
-            "startDate" => "Дата начала",
             "priceSign" => "Подпись к цене",
         ];
     }
@@ -84,7 +82,6 @@ class PricesWire extends Component
             "description" => $this->description,
             "price" => $this->price,
             "old_price" => $this->oldPrice,
-            "start_date" => $this->startDate,
             "price_sign" => $this->priceSign,
         ]);
         /**
@@ -113,7 +110,6 @@ class PricesWire extends Component
         $this->description = $record->description;
         $this->price = $record->price;
         $this->oldPrice = $record->old_price;
-        $this->startDate = (string) $record->start_date;
         $this->priceSign = $record->price_sign;
         if ($record->image_id) {
             $record->load("image");
@@ -136,7 +132,6 @@ class PricesWire extends Component
             "description" => $this->description,
             "price" => $this->price,
             "old_price" => $this->oldPrice,
-            "start_date" => $this->startDate,
             "price_sign" => $this->priceSign,
         ]);
         $record->livewireImage($this->image);
@@ -178,6 +173,6 @@ class PricesWire extends Component
 
     protected function resetFields(): void
     {
-        $this->reset("title", "description", "price", "oldPrice", "startDate", "priceSign", "imageUrl", "image", "itemId");
+        $this->reset("title", "description", "price", "oldPrice", "priceSign", "imageUrl", "image", "itemId");
     }
 }

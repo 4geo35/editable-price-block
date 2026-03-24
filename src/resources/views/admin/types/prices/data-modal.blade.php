@@ -60,17 +60,6 @@
             </div>
 
             <div>
-                <label for="priceBlockStartDate-{{ $block->id }}" class="inline-block mb-2">
-                    Дата начала
-                </label>
-                <input type="date" id="priceBlockStartDate-{{ $block->id }}"
-                       class="form-control {{ $errors->has("startDate") ? "border-danger" : "" }}"
-                       wire:loading.attr="disabled"
-                       wire:model="startDate">
-                <x-tt::form.error name="startDate"/>
-            </div>
-
-            <div>
                 <label for="priceBlockDescription-{{ $block->id }}" class="flex justify-start items-center mb-2">
                     Описание
                     @include("tt::admin.description-button", ["id" => "priceBlockDescription-{$block->id}-Hidden"])

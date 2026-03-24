@@ -9,7 +9,6 @@
     </div>
     <div>{{ $item->recordable->human_price }}</div>
     <div>{{ $item->recordable->human_old_price }}</div>
-    <div>{{ $item->recordable->human_start }}</div>
     <div>{{ $item->recordable->render_sign }}</div>
     <div class="prose max-w-none">
         {!! $item->markdown !!}

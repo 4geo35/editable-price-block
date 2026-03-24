@@ -18,7 +18,6 @@ return new class extends Migration
             $table->text("description")->nullable();
             $table->decimal("price", 12, 2)->nullable();
             $table->decimal("old_price", 12, 2)->nullable();
-            $table->date("start_date")->nullable();
             $table->string("price_sign")->nullable();
 
             $table->timestamps();

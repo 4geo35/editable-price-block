@@ -16,7 +16,6 @@ class PriceRecord extends Model implements PriceRecordInterface
         "description",
         "price",
         "old_price",
-        "start_date",
         "price_sign",
     ];
 
@@ -34,13 +33,6 @@ class PriceRecord extends Model implements PriceRecordInterface
             return number_format($this->old_price ?? 0, 2, ",", " ");
         else
             return number_format($this->old_price ?? 0, 0, ",", " ");
-    }
-
-    public function getHumanStartAttribute(): ?string
-    {
-        $value = $this->start_date;
-        if (empty($value)) { return $value; }
-        return date_helper()->format($value, "d.m.Y");
     }
 
     public function getRenderSignAttribute(): string
