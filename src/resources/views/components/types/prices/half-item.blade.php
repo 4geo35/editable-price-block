@@ -7,7 +7,7 @@
                 <picture>
                     <source media="(min-width: 768px)"
                             srcset="{{ route('thumb-img', ['template' => 'half-price-record-image', 'filename' => $image->file_name]) }}">
-                    <source media="(min-width: 480px)"
+                    <source media="(min-width: 640px)"
                             srcset="{{ route('thumb-img', ['template' => 'tablet-half-price-record-image', 'filename' => $image->file_name]) }}">
                     <img
                         class="rounded-base h-full object-cover object-center md:ml-auto"

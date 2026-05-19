@@ -1,33 +1,33 @@
 @props(["item"])
 @php($image = $item->recordable->image)
 <div class="h-full p-indent-half sm:p-indent bg-white rounded-base border border-stroke">
-    <div class="row h-full">
+    <div class="flex flex-col h-full">
         @if ($image)
-            <div class="col w-full xl:w-1/2 xs:h-[165px] sm:h-[190px] md:h-[248px] lg:h-[340px] xl:h-[212px] 2xl:h-[257px] mb-indent-half sm:mb-indent xl:mb-0 xl:order-last">
+            <div class="xs:h-[230px] sm:h-[262px] md:h-[345px] lg:h-[216px] xl:h-[174px] 2xl:h-[220px] mb-indent-half sm:mb-indent">
                 <picture>
-                    <source media="(min-width: 1280px)"
-                            srcset="{{ route('thumb-img', ['template' => 'price-record-image', 'filename' => $image->file_name]) }}">
+                    <source media="(min-width: 1024px)"
+                            srcset="{{ route('thumb-img', ['template' => 'third-price-record-image', 'filename' => $image->file_name]) }}">
                     <source media="(min-width: 640px)"
-                            srcset="{{ route('thumb-img', ['template' => 'tablet-price-record-image', 'filename' => $image->file_name]) }}">
+                            srcset="{{ route('thumb-img', ['template' => 'tablet-third-price-record-image', 'filename' => $image->file_name]) }}">
                     <img
                         class="rounded-base h-full object-cover object-center"
-                        src="{{ route('thumb-img', ['template' => 'mobile-price-record-image', 'filename' => $image->file_name]) }}"
+                        src="{{ route('thumb-img', ['template' => 'mobile-third-price-record-image', 'filename' => $image->file_name]) }}"
                         alt="">
                 </picture>
             </div>
         @endif
-        <div class="col w-full xl:w-1/2 flex flex-col xl:order-first">
-            <div class="flex-1">
-                <div class="text-h3-mobile sm:text-h3 font-semibold">
-                    {{ $item->title }}
-                </div>
-                @if ($item->recordable->description)
-                    <div class="prose max-w-none prose-p:leading-6 mt-indent-half">
-                        {!! $item->recordable->markdown !!}
-                    </div>
-                @endif
+
+        <div class="flex-1">
+            <div class="text-xl sm:text-2xl 2xl:text-3xl font-semibold">
+                {{ $item->title }}
             </div>
-            @include("eprb::web.types.prices.includes.price")
+            @if ($item->recordable->description)
+                <div class="prose max-w-none prose-p:leading-6 mt-indent-half">
+                    {!! $item->recordable->markdown !!}
+                </div>
+            @endif
         </div>
+
+        @include("eprb::web.types.prices.includes.price")
     </div>
 </div>

@@ -11,8 +11,8 @@
         @foreach($block->items as $index => $item)
             @switch($perCol)
                 @case(3)
-                    <div class="col w-1/3 mb-indent">
-                        <x-eprb::types.prices.item :$item />
+                    <div class="col w-full lg:w-1/2 xl:w-1/3 mb-indent">
+                        <x-eprb::types.prices.third-item :$item />
                     </div>
                     @break
 

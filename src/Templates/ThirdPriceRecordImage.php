@@ -5,10 +5,10 @@ namespace GIS\EditablePriceBlock\Templates;
 use Intervention\Image\Interfaces\ImageInterface;
 use Intervention\Image\Interfaces\ModifierInterface;
 
-class HalfPriceRecordImage implements ModifierInterface
+class ThirdPriceRecordImage implements ModifierInterface
 {
     public function apply(ImageInterface $image): ImageInterface
     {
-        return $image->cover(317, 323);
+        return $image->cover(414, 220);
     }
 }
