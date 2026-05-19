@@ -38,7 +38,17 @@ class PriceRecord extends Model implements PriceRecordInterface
     public function getRenderSignAttribute(): string
     {
         $value = $this->price_sign;
-        if (empty($value)) { return "р"; }
+        if (empty($value)) { return "р."; }
         return $value;
+    }
+
+    public function getRenderPriceAttribute(): string
+    {
+        return "$this->human_price $this->render_sign";
+    }
+
+    public function getRenderOldPriceAttribute(): string
+    {
+        return "$this->human_old_price $this->render_sign";
     }
 }

@@ -8,6 +8,7 @@ return [
             "render" => "eprb::types.prices",
         ],
     ],
+    "perCol" => 1, // 1,2,3
 
     "expandRender" => [
         "expandPriceRecord" => [
@@ -27,5 +28,9 @@ return [
     "customPriceComponent" => null,
 
     // Templates
-    "templates" => [],
+    "templates" => [
+        "price-record-image" => \GIS\EditablePriceBlock\Templates\PriceRecordImage::class,
+        "tablet-price-record-image" => \GIS\EditablePriceBlock\Templates\TabletPriceRecordImage::class,
+        "mobile-price-record-image" => \GIS\EditablePriceBlock\Templates\MobilePriceRecordImage::class,
+    ],
 ];
