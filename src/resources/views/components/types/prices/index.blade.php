@@ -9,9 +9,25 @@
 
     <div class="row">
         @foreach($block->items as $index => $item)
-            <div class="col w-full mb-indent">
-                <x-eprb::types.prices.item :$item />
-            </div>
+            @switch($perCol)
+                @case(3)
+                    <div class="col w-1/3 mb-indent">
+                        <x-eprb::types.prices.item :$item />
+                    </div>
+                    @break
+
+                @case(2)
+                    <div class="col w-full 2xl:w-1/2 mb-indent">
+                        <x-eprb::types.prices.half-item :$item />
+                    </div>
+                    @break
+
+                @default
+                    <div class="col w-full mb-indent">
+                        <x-eprb::types.prices.item :$item />
+                    </div>
+                    @break
+            @endswitch
         @endforeach
     </div>
 @endif

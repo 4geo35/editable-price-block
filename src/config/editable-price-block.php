@@ -8,7 +8,7 @@ return [
             "render" => "eprb::types.prices",
         ],
     ],
-    "perCol" => 1, // 1,2,3
+    "perCol" => 2, // 1,2,3
 
     "expandRender" => [
         "expandPriceRecord" => [
@@ -32,5 +32,9 @@ return [
         "price-record-image" => \GIS\EditablePriceBlock\Templates\PriceRecordImage::class,
         "tablet-price-record-image" => \GIS\EditablePriceBlock\Templates\TabletPriceRecordImage::class,
         "mobile-price-record-image" => \GIS\EditablePriceBlock\Templates\MobilePriceRecordImage::class,
+
+        "half-price-record-image" => \GIS\EditablePriceBlock\Templates\HalfPriceRecordImage::class,
+        "tablet-half-price-record-image" => \GIS\EditablePriceBlock\Templates\TabletHalfPriceRecordImage::class,
+        "mobile-half-price-record-image" => \GIS\EditablePriceBlock\Templates\MobileHalfPriceRecordImage::class,
     ],
 ];
